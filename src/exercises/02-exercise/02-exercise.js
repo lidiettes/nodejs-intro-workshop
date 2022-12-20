@@ -6,18 +6,20 @@ function uppercase(callback) {
     const FILE_PATH = path.resolve(__dirname, 'names.txt');
     fs.readFile(FILE_PATH, 'utf-8', (err, data) => {
         if (error) throw error;
-        const upperCasedNames = data //string 
+        const upperCasesNames = data //string 
             .split(';')   //array
             .map((name) => name.toUpperCase()) //array
             .join(';')  //string
 
-        console.log(upperCasedNames)
-        fs.writeFile(FILE_PATH, upperCasedNames, 'utf-8', (error) => {
-            if (error) throw error;
-            callback(upperCasedNames);
+        console.log(upperCasesNames)
+        fs.writeFile(FILE_PATH, upperCasesNames, 'utf-8', (error) => {
+            if (error) throw error
+            callback(upperCasesNames);
         })
     })
+
 }
+
 
 
 
